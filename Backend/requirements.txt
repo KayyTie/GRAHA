@@ -1,0 +1,11 @@
+# Tested working combination for detrending.py + bls_search.py + local_batch_pipeline.py
+# For exact reproducibility with your Colab results, run in Colab:
+#   !pip freeze | grep -Ei "astropy|scipy|wotan|pandas|numpy|tqdm"
+# and replace the versions below with those.
+
+astropy==8.0.1
+scipy==1.17.1
+wotan==1.10
+pandas==3.0.2
+numpy==2.4.4
+tqdm==4.70.0
