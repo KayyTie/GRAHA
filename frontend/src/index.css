@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-space-950: #030712;
+  --color-space-900: #0b0f19;
+  --color-space-850: #111827;
+  --color-space-800: #1f2937;
+  --color-space-700: #374151;
+  --font-orbitron: "Orbitron", sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+::selection {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+::-moz-selection {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.orbit-path {
+  border: 1px dashed #343535;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.planet {
+  position: absolute;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.data-row {
+  border-bottom: 1px solid #1A1A1A;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+/* Animation for orbits */
+@keyframes expandTracking {
+  from {
+    letter-spacing: 0.1em;
+  }
+
+  to {
+    letter-spacing: 0.5em;
+  }
+}
+
+.animate-expand-tracking {
+  animation: expandTracking 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes orbit1 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit2 {
+  from {
+    transform: translate(-50%, -50%) rotate(45deg) translateX(200px) rotate(-45deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(405deg) translateX(200px) rotate(-405deg);
+  }
+}
+
+@keyframes orbit3 {
+  from {
+    transform: translate(-50%, -50%) rotate(180deg) translateX(300px) rotate(-180deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(540deg) translateX(300px) rotate(-540deg);
+  }
+}
+
+.planet-1 {
+  animation: orbit1 15s linear infinite;
+}
+
+.planet-2 {
+  animation: orbit2 25s linear infinite;
+}
+
+.planet-3 {
+  animation: orbit3 40s linear infinite;
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #343535;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5e5e5e;
+}
